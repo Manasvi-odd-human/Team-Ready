@@ -1,0 +1,326 @@
+/* Reset and Base Styles */
+:root {
+    --bg-color: #080c14;
+    --panel-bg: #080c14;
+    --text-main: #e0e6ed;
+    --text-muted: #8b9bb4;
+    --accent-cyan: #00d2ff; /* Bright Cyan */
+    --accent-dark: #005f73;
+    --border-color: #1a2a3a;
+    --font-main: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-main);
+    height: 100vh;
+    overflow: hidden; /* Prevent scrollbar if possible */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-container {
+    width: 100%;
+    height: 100%;
+    max-width: 1400px; /* Optional constraint */
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    position: relative;
+}
+
+/* Settings Icon */
+.settings-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: var(--text-main);
+    cursor: pointer;
+    z-index: 10;
+}
+
+.settings-icon:hover {
+    color: var(--accent-cyan);
+}
+
+/* Grid Layout */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr 280px;
+    height: 100%;
+    gap: 0; /* No gap, borders handle separation */
+}
+
+.panel {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.left-panel {
+    border-right: 1px solid var(--border-color);
+}
+
+.right-panel {
+    border-left: 1px solid var(--border-color);
+}
+
+.center-panel {
+    align-items: center;
+    padding-top: 40px;
+}
+
+/* Typography */
+h2 {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    color: var(--text-main);
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+h3 {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: var(--text-main);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* Left Panel Components */
+.team-list {
+    list-style: none;
+}
+
+.team-member {
+    display: flex;
+    align-items: flex-start; /* Align top for multi-line text */
+    margin-bottom: 25px;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.team-member.active, .team-member:hover {
+    opacity: 1;
+}
+
+.icon-wrapper {
+    width: 30px;
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    padding-top: 3px; /* visual alignment */
+}
+
+/* CSS Icons */
+.icon-play {
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--text-main);
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icon-play::after {
+    content: '';
+    width: 0; 
+    height: 0; 
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 8px solid var(--text-main);
+    margin-left: 2px;
+}
+
+.icon-triangle {
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 20px solid var(--accent-cyan); /* Filled triangle */
+}
+
+.icon-circle {
+    width: 20px;
+    height: 20px;
+    background-color: var(--accent-cyan);
+    border-radius: 50%;
+}
+
+.icon-circle.small {
+    width: 14px;
+    height: 14px;
+    background-color: transparent;
+    border: 2px solid var(--accent-cyan);
+}
+
+.member-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.role {
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.status {
+    font-size: 0.7rem;
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.divider {
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 20px 0 40px 0;
+}
+
+/* Chart */
+.chart-container {
+    margin-bottom: 30px;
+    padding: 0 10px;
+}
+.mini-chart {
+    width: 100%;
+    overflow: visible;
+}
+
+/* Center Panel Flowchart */
+.flowchart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.node {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    color: var(--text-main);
+    text-transform: uppercase;
+    padding: 10px;
+    text-align: center;
+}
+
+.arrow {
+    color: var(--accent-cyan);
+    font-size: 1.5rem;
+    margin: 5px 0;
+    opacity: 0.8;
+}
+
+/* Special Pill Node */
+.active-node-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.node-pill {
+    border: 1px solid var(--accent-cyan);
+    border-radius: 50px;
+    padding: 8px 25px;
+    color: var(--accent-cyan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.2);
+    min-width: 200px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-cyan); /* Blue dot */
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.ring {
+    width: 8px;
+    height: 8px;
+    border: 1px solid var(--accent-cyan);
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.side-tag {
+    position: absolute;
+    right: -100px; /* Push to the side */
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    background-color: #111a26;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: var(--accent-cyan);
+}
+.side-tag.analyst-tag {
+    background-color: rgba(0, 210, 255, 0.1);
+}
+
+.side-tag::before {
+    content: '●';
+    margin-right: 5px;
+    font-size: 0.6rem;
+}
+
+/* Right Panel Buttons */
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+button {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--accent-cyan);
+    padding: 15px;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+}
+
+button:hover {
+    border-color: var(--accent-cyan);
+    background-color: rgba(0, 210, 255, 0.05);
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.1);
+}
+
+.sprint-report {
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.sprint-report p {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}

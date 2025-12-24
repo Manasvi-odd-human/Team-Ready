@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Ready Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="/eel.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <!-- Using Google Fonts for a tech look -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Settings Icon Top Right -->
+        <div class="settings-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- Left Column: Product Team & CV Loot -->
+            <aside class="panel left-panel">
+                <div class="section team-section">
+                    <h2>PRODUCT TEAM</h2>
+                    <ul class="team-list">
+                        <li class="team-member active">
+                            <div class="icon-wrapper">
+                                <div class="icon-play"></div>
+                            </div>
+                            <div class="member-info">
+                                <span class="role">Product Manager</span>
+                                <span class="status">GENERATING STATUS REP...</span>
+                            </div>
+                        </li>
+                        <li class="team-member">
+                            <div class="icon-wrapper">
+                                <div class="icon-triangle"></div>
+                            </div>
+                            <div class="member-info">
+                                <span class="role">Designer</span>
+                            </div>
+                        </li>
+                        <li class="team-member">
+                            <div class="icon-wrapper">
+                                <div class="icon-circle"></div>
+                            </div>
+                            <div class="member-info">
+                                <span class="role">Engineer</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="section loot-section">
+                    <h2>CV LOOT</h2>
+                    <div class="chart-container">
+                         <!-- Simple SVG Line Chart -->
+                         <svg viewBox="0 0 100 40" class="mini-chart">
+                            <polyline points="0,30 20,30 40,15 70,10 100,20" fill="none" stroke="#4db8ff" stroke-width="2" marker-start="url(#dot)" marker-mid="url(#dot)" marker-end="url(#dot)"/>
+                            <defs>
+                                <marker id="dot" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6">
+                                    <circle cx="5" cy="5" r="5" fill="#4db8ff" />
+                                </marker>
+                            </defs>
+                            <!-- Hexagon overlay -->
+                             <polygon points="35,15 40,12 45,15 45,21 40,24 35,21" fill="#4db8ff" opacity="0.8" transform="translate(-2, 2)"/>
+                         </svg>
+                    </div>
+                    
+                    <ul class="team-list">
+                         <li class="team-member">
+                            <div class="icon-wrapper">
+                                <div class="icon-circle small"></div>
+                            </div>
+                            <div class="member-info">
+                                <span class="role">Analyst</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Center Column: Deliverables Flowchart -->
+            <main class="panel center-panel">
+                <h2>SEMESTER 1 DELIVERABLES</h2>
+                <div class="flowchart">
+                    <div class="node">DEVELOP FEATURE SET</div>
+                    <div class="arrow">↓</div>
+                    
+                    <div class="node active-node-container">
+                        <div class="node-pill">
+                            <span class="dot"></span>
+                            INCUNCUS
+                            <span class="ring"></span>
+                        </div>
+                        <span class="side-tag">INCUNCUS</span>
+                    </div>
+                    
+                    <div class="arrow">↓</div>
+                    <div class="node">WIREFRAME NEW UI</div>
+                    <div class="arrow">↓</div>
+                    <div class="node">LAUNCH NEW APP</div>
+                    <div class="arrow">↓</div>
+                    <div class="node">DESIGN UI MOCKUP</div>
+                    <div class="arrow">↓</div>
+                    
+                    <div class="node active-node-container">
+                         <div class="node text-only">LAUNCH NEW APP</div>
+                         <span class="side-tag analyst-tag">ANALYST</span>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Right Column: Boss Controls -->
+            <aside class="panel right-panel">
+                <h2>BOSS.</h2>
+                <div class="action-buttons">
+                    <button onclick="handleAction('HIRE NEW LLM')">HIRE NEW LLM</button>
+                    <button onclick="handleAction('REASSIGN TASK')">REASSIGN TASK</button>
+                    <button onclick="handleAction('REQUEST REPORT')">REQUEST REPORT</button>
+                    <button onclick="handleAction('CHAT WITH MANAGER')">CHAT WITH MANAGER</button>
+                </div>
+
+                <div class="sprint-report">
+                    <h3>SPRINT REPORT</h3>
+                    <p>OUR DESIGN TEAM REQUESTS REINFORCEMENT.</p>
+                </div>
+            </aside>
+        </div>
+    </div>
+</body>
+</html>
