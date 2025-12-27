@@ -1,0 +1,240 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="CrewAI Command Center Dashboard">
+  <title>CrewAI Command Center</title>
+
+  <defs>
+    <!-- Soft shadow -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#131A26" flood-opacity="0.22"/>
+    </filter>
+
+    <!-- Card gradient -->
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#12171F"/>
+      <stop offset="100%" stop-color="#0C1118"/>
+    </linearGradient>
+
+    <!-- Accent gradient -->
+    <linearGradient id="accentGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5BD4FF"/>
+      <stop offset="100%" stop-color="#6A7DFF"/>
+    </linearGradient>
+
+    <!-- Accent ring -->
+    <radialGradient id="ringGrad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="rgba(91,212,255,0.2)"/>
+      <stop offset="60%" stop-color="rgba(91,212,255,0.08)"/>
+      <stop offset="100%" stop-color="rgba(91,212,255,0)"/>
+    </radialGradient>
+
+    <!-- Health color scale -->
+    <linearGradient id="healthGradE1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#36D399"/>
+      <stop offset="100%" stop-color="#22C55E"/>
+    </linearGradient>
+    <linearGradient id="healthGradE2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="healthGradE3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F87171"/>
+      <stop offset="100%" stop-color="#EF4444"/>
+    </linearGradient>
+
+    <!-- Rounded rect reusable -->
+    <symbol id="card">
+      <rect width="100%" height="100%" rx="14" fill="url(#cardGrad)" stroke="#1F2835" stroke-width="1"/>
+    </symbol>
+
+    <!-- Icon: search -->
+    <symbol id="icon-search" viewBox="0 0 24 24">
+      <circle cx="11" cy="11" r="7" stroke="#9FB2C8" stroke-width="2" fill="none"/>
+      <line x1="20" y1="20" x2="16.5" y2="16.5" stroke="#9FB2C8" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+
+    <!-- Icon: plus -->
+    <symbol id="icon-plus" viewBox="0 0 24 24">
+      <line x1="12" y1="5" x2="12" y2="19" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+      <line x1="5" y1="12" x2="19" y2="12" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+
+    <!-- Icon: play -->
+    <symbol id="icon-play" viewBox="0 0 24 24">
+      <polygon points="8,5 19,12 8,19" fill="#0F172A"/>
+    </symbol>
+
+    <!-- Icon: stop -->
+    <symbol id="icon-stop" viewBox="0 0 24 24">
+      <rect x="6" y="6" width="12" height="12" fill="#0F172A" rx="2"/>
+    </symbol>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#0A0F16"/>
+  <rect x="0" y="0" width="1200" height="800" fill="url(#ringGrad)" opacity="0.4"/>
+
+  <!-- Header -->
+  <g transform="translate(60,40)">
+    <rect width="1080" height="80" rx="16" fill="#0C131B" filter="url(#shadow)"/>
+    <text x="24" y="48" fill="#E6EDF5" font-size="26" font-family="Inter, system-ui" font-weight="700">CrewAI — Command Center</text>
+    <text x="24" y="70" fill="#9FB2C8" font-size="14" font-family="Inter, system-ui" font-weight="500">High-level status of the Company</text>
+
+    <!-- Global search -->
+    <g transform="translate(480,20)">
+      <rect width="420" height="44" rx="12" fill="#0E1620" stroke="#1F2835"/>
+      <use href="#icon-search" x="14" y="10" width="24" height="24"/>
+      <text x="48" y="28" fill="#9FB2C8" font-size="14" font-family="Inter, system-ui">Global Search…</text>
+    </g>
+
+    <!-- New project button -->
+    <g transform="translate(920,20)">
+      <rect width="140" height="44" rx="12" fill="url(#accentGrad)" filter="url(#shadow)"/>
+      <use href="#icon-plus" x="12" y="10" width="24" height="24"/>
+      <text x="44" y="28" fill="#0F172A" font-size="14" font-family="Inter, system-ui" font-weight="700">New Project</text>
+    </g>
+  </g>
+
+  <!-- Display cards -->
+  <g transform="translate(60,140)" font-family="Inter, system-ui">
+    <!-- Card: Total Projects -->
+    <g transform="translate(0,0)">
+      <use href="#card" width="340" height="160" filter="url(#shadow)"/>
+      <text x="20" y="36" fill="#9FB2C8" font-size="13" font-weight="600">Total Projects</text>
+      <text x="20" y="98" fill="#E6EDF5" font-size="44" font-weight="800">12</text>
+      <rect x="20" y="116" width="120" height="6" rx="3" fill="#1F2835"/>
+      <rect x="20" y="116" width="86" height="6" rx="3" fill="url(#accentGrad)"/>
+      <text x="150" y="122" fill="#7089A6" font-size="12">Velocity</text>
+    </g>
+
+    <!-- Card: Active Tasks -->
+    <g transform="translate(370,0)">
+      <use href="#card" width="340" height="160" filter="url(#shadow)"/>
+      <text x="20" y="36" fill="#9FB2C8" font-size="13" font-weight="600">Active Tasks</text>
+      <text x="20" y="98" fill="#E6EDF5" font-size="44" font-weight="800">37</text>
+      <rect x="20" y="116" width="120" height="6" rx="3" fill="#1F2835"/>
+      <rect x="20" y="116" width="102" height="6" rx="3" fill="#6A7DFF"/>
+      <text x="150" y="122" fill="#7089A6" font-size="12">In progress</text>
+    </g>
+
+    <!-- Card: Crew Status -->
+    <g transform="translate(740,0)">
+      <use href="#card" width="340" height="160" filter="url(#shadow)"/>
+      <text x="20" y="36" fill="#9FB2C8" font-size="13" font-weight="600">Crew Status</text>
+
+      <!-- E1 -->
+      <circle cx="40" cy="80" r="16" fill="#0F172A" stroke="#1F2835"/>
+      <rect x="64" y="70" width="180" height="10" rx="5" fill="#1F2835"/>
+      <rect x="64" y="70" width="152" height="10" rx="5" fill="url(#healthGradE1)"/>
+      <text x="64" y="94" fill="#E6EDF5" font-size="12" font-weight="700">E1</text>
+      <text x="100" y="94" fill="#36D399" font-size="12" font-weight="700">Healthy</text>
+
+      <!-- E2 -->
+      <circle cx="40" cy="116" r="16" fill="#0F172A" stroke="#1F2835"/>
+      <rect x="64" y="106" width="180" height="10" rx="5" fill="#1F2835"/>
+      <rect x="64" y="106" width="124" height="10" rx="5" fill="url(#healthGradE2)"/>
+      <text x="64" y="130" fill="#E6EDF5" font-size="12" font-weight="700">E2</text>
+      <text x="100" y="130" fill="#F59E0B" font-size="12" font-weight="700">Warning</text>
+
+      <!-- E3 -->
+      <circle cx="40" cy="152" r="16" fill="#0F172A" stroke="#1F2835"/>
+      <rect x="64" y="142" width="180" height="10" rx="5" fill="#1F2835"/>
+      <rect x="64" y="142" width="86" height="10" rx="5" fill="url(#healthGradE3)"/>
+      <text x="64" y="166" fill="#E6EDF5" font-size="12" font-weight="700">E3</text>
+      <text x="100" y="166" fill="#EF4444" font-size="12" font-weight="700">Critical</text>
+    </g>
+  </g>
+
+  <!-- System feed -->
+  <g transform="translate(60,340)" font-family="Inter, system-ui">
+    <rect width="760" height="360" rx="16" fill="url(#cardGrad)" stroke="#1F2835" filter="url(#shadow)"/>
+    <text x="20" y="34" fill="#9FB2C8" font-size="13" font-weight="600">Recent Crew Activities</text>
+
+    <!-- Feed viewport mask -->
+    <clipPath id="feedClip">
+      <rect x="20" y="52" width="720" height="280" rx="12"/>
+    </clipPath>
+
+    <!-- Scroll hint bar -->
+    <rect x="680" y="340" width="60" height="6" rx="3" fill="#1F2835"/>
+    <rect x="680" y="340" width="28" height="6" rx="3" fill="#6A7DFF"/>
+
+    <!-- Feed items -->
+    <g clip-path="url(#feedClip)">
+      <g transform="translate(20,56)">
+        <g transform="translate(0,0)">
+          <circle cx="12" cy="12" r="6" fill="#36D399"/>
+          <text x="28" y="16" fill="#E6EDF5" font-size="14">E1 completed Research Task</text>
+          <text x="620" y="16" fill="#7089A6" font-size="12">2m ago</text>
+        </g>
+        <g transform="translate(0,40)">
+          <circle cx="12" cy="12" r="6" fill="#6A7DFF"/>
+          <text x="28" y="16" fill="#E6EDF5" font-size="14">E2 started Data Cleaning</text>
+          <text x="620" y="16" fill="#7089A6" font-size="12">7m ago</text>
+        </g>
+        <g transform="translate(0,80)">
+          <circle cx="12" cy="12" r="6" fill="#FBBF24"/>
+          <text x="28" y="16" fill="#E6EDF5" font-size="14">E3 awaiting API credentials</text>
+          <text x="620" y="16" fill="#7089A6" font-size="12">12m ago</text>
+        </g>
+        <g transform="translate(0,120)">
+          <circle cx="12" cy="12" r="6" fill="#36D399"/>
+          <text x="28" y="16" fill="#E6EDF5" font-size="14">E1 merged PR #128</text>
+          <text x="620" y="16" fill="#7089A6" font-size="12">18m ago</text>
+        </g>
+        <g transform="translate(0,160)">
+          <circle cx="12" cy="12" r="6" fill="#EF4444"/>
+          <text x="28" y="16" fill="#E6EDF5" font-size="14">E3 error: rate limit exceeded</text>
+          <text x="620" y="16" fill="#7089A6" font-size="12">24m ago</text>
+        </g>
+        <g transform="translate(0,200)">
+          <circle cx="12" cy="12" r="6" fill="#6A7DFF"/>
+          <text x="28" y="16" fill="#E6EDF5" font-size="14">E2 queued Model Training</text>
+          <text x="620" y="16" fill="#7089A6" font-size="12">31m ago</text>
+        </g>
+        <g transform="translate(0,240)">
+          <circle cx="12" cy="12" r="6" fill="#36D399"/>
+          <text x="28" y="16" fill="#E6EDF5" font-size="14">E1 deployed analytics service</text>
+          <text x="620" y="16" fill="#7089A6" font-size="12">45m ago</text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- Control panel -->
+  <g transform="translate(840,340)" font-family="Inter, system-ui">
+    <rect width="300" height="360" rx="16" fill="url(#cardGrad)" stroke="#1F2835" filter="url(#shadow)"/>
+    <text x="20" y="34" fill="#9FB2C8" font-size="13" font-weight="600">Agent Controls</text>
+
+    <!-- Start all agents -->
+    <g transform="translate(20,68)">
+      <rect width="260" height="56" rx="12" fill="#36D399" filter="url(#shadow)"/>
+      <use href="#icon-play" x="16" y="16" width="24" height="24"/>
+      <text x="48" y="34" fill="#0F172A" font-size="16" font-weight="800">Start All Agents</text>
+      <text x="48" y="52" fill="#0F172A" font-size="12" font-weight="600" opacity="0.7">Initialize and resume workflows</text>
+    </g>
+
+    <!-- Stop all agents -->
+    <g transform="translate(20,144)">
+      <rect width="260" height="56" rx="12" fill="#EF4444" filter="url(#shadow)"/>
+      <use href="#icon-stop" x="16" y="16" width="24" height="24"/>
+      <text x="48" y="34" fill="#0F172A" font-size="16" font-weight="800">Stop All Agents</text>
+      <text x="48" y="52" fill="#0F172A" font-size="12" font-weight="600" opacity="0.7">Emergency kill-switch</text>
+    </g>
+
+    <!-- Safety note -->
+    <g transform="translate(20,220)">
+      <rect width="260" height="104" rx="12" fill="#0E1620" stroke="#1F2835"/>
+      <text x="16" y="30" fill="#9FB2C8" font-size="12" font-weight="700">Safety status</text>
+      <text x="16" y="54" fill="#E6EDF5" font-size="13">Active limits: rate, budget, retries</text>
+      <rect x="16" y="68" width="228" height="6" rx="3" fill="#1F2835"/>
+      <rect x="16" y="68" width="148" height="6" rx="3" fill="#6A7DFF"/>
+      <text x="16" y="90" fill="#7089A6" font-size="12">Policy compliance 65%</text>
+    </g>
+  </g>
+
+  <!-- Footer -->
+  <g transform="translate(60,720)">
+    <text x="0" y="0" fill="#7089A6" font-size="12" font-family="Inter, system-ui">
+      Tip: This SVG is component-ready—swap text and values dynamically or theme via gradients.
+    </text>
+  </g>
+</svg>

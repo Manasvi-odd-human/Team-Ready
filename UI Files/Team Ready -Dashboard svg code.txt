@@ -1,0 +1,211 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-label="Team Ready">
+  <defs>
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#12171F"/>
+      <stop offset="100%" stop-color="#0C1118"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5BD4FF"/>
+      <stop offset="100%" stop-color="#6A7DFF"/>
+    </linearGradient>
+    <linearGradient id="sendGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7EE7B8"/>
+      <stop offset="100%" stop-color="#36D399"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L6,3 z" fill="#9FB2C8"/>
+    </marker>
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="900" fill="#0A0F16"/>
+
+  <!-- Header -->
+  <g transform="translate(40,20)">
+    <text x="0" y="30" fill="#E6EDF5" font-size="22" font-family="Inter, system-ui" font-weight="700">Team Ready - Dashboard</text>
+
+
+    <!-- + New Project (old) -->
+    <g transform="translate(620,10)">
+      <rect width="140" height="40" rx="10" fill="url(#accentGrad)" filter="url(#softShadow)"/>
+      <text x="20" y="26" fill="#0F172A" font-size="14" font-weight="700" font-family="Inter, system-ui">+ New Project</text>
+    </g>
+
+    <!-- Manage Projects (new) -->
+    <g transform="translate(780,10)">
+      <rect width="160" height="40" rx="10" fill="url(#accentGrad)" filter="url(#softShadow)"/>
+      <text x="20" y="26" fill="#0F172A" font-size="14" font-weight="700" font-family="Inter, system-ui">Manage Projects</text>
+    </g>
+  </g>
+
+  <!-- Settings Icon (outermost top right) -->
+  <g transform="translate(1340,20)" aria-hidden="true">
+    <circle cx="20" cy="20" r="18" fill="#1F2835"/>
+    <g stroke="#9FB2C8" stroke-width="2" stroke-linecap="round">
+      <line x1="20" y1="10" x2="20" y2="30"/>
+      <line x1="10" y1="20" x2="30" y2="20"/>
+    </g>
+  </g>
+
+  <!-- Top bars -->
+  <g transform="translate(40,80)" font-family="Inter, system-ui">
+    <!-- API Usage -->
+    <text x="0" y="0" dy="1em" fill="#9FB2C8" font-size="14" font-weight="600">API Usage</text>
+    <rect x="0" y="30" width="600" height="20" rx="10" fill="#1F2835"/>
+    <rect x="0" y="30" width="420" height="20" rx="10" fill="url(#accentGrad)"/>
+    <text x="610" y="45" fill="#9FB2C8" font-size="12">70%</text>
+
+    <!-- Project Completion -->
+    <text x="700" y="0" dy="1em" fill="#9FB2C8" font-size="14" font-weight="600">Project Completion</text>
+    <rect x="700" y="30" width="600" height="20" rx="10" fill="#1F2835"/>
+    <rect x="700" y="30" width="300" height="20" rx="10" fill="url(#accentGrad)"/>
+    <text x="1310" y="45" fill="#9FB2C8" font-size="12">50%</text>
+  </g>
+
+  <!-- Left logs -->
+  <g transform="translate(40,140)">
+    <rect width="300" height="740" rx="16" fill="url(#cardGrad)" stroke="#1F2835"/>
+    <text x="20" y="40" fill="#9FB2C8" font-size="14" font-weight="600">AI Employee Logs</text>
+    <g transform="translate(20,70)" fill="#E6EDF5" font-size="13">
+      <text y="0">• E1 edited file main.py</text>
+      <text y="30">• E2 discussed API integration</text>
+      <text y="60">• E3 reviewed PR #45</text>
+      <text y="90">• E1 deployed analytics service</text>
+      <text y="120">• E2 queued model training</text>
+      <text y="150">• E3 requested credentials</text>
+      <text y="180">• E1 merged PR #128</text>
+    </g>
+  </g>
+
+  <!-- Center graph mode -->
+  <g transform="translate(360,140)">
+    <rect width="700" height="500" rx="16" fill="url(#cardGrad)" stroke="#1F2835"/>
+    <text x="20" y="40" fill="#9FB2C8" font-size="14" font-weight="600">Task Flow Chart</text>
+
+    <!-- Graph nodes with status colors -->
+    <g transform="translate(60,100)" font-size="13" fill="#E6EDF5" font-family="Inter, system-ui">
+      <!-- Node: completed (green) -->
+      <rect x="0" y="0" width="160" height="50" rx="8" fill="#0F172A" stroke="#36D399" stroke-width="2"/>
+      <text x="20" y="30">Design login screen</text>
+
+      <!-- Node: in progress (yellow) -->
+      <rect x="240" y="0" width="160" height="50" rx="8" fill="#0F172A" stroke="#FBBF24" stroke-width="2"/>
+      <text x="260" y="30">Implement API client</text>
+
+      <!-- Node: blocked (red) -->
+      <rect x="480" y="0" width="160" height="50" rx="8" fill="#0F172A" stroke="#EF4444" stroke-width="2"/>
+      <text x="500" y="30">Write unit tests</text>
+
+      <!-- Node: queued (accent) -->
+      <rect x="240" y="120" width="160" height="50" rx="8" fill="#0F172A" stroke="#6A7DFF" stroke-width="2"/>
+      <text x="260" y="150">Deployment script</text>
+
+      <!-- Node: review (accent) -->
+      <rect x="480" y="120" width="160" height="50" rx="8" fill="#0F172A" stroke="#6A7DFF" stroke-width="2"/>
+      <text x="500" y="150">Document endpoints</text>
+
+      <!-- Edges -->
+      <line x1="160" y1="25" x2="240" y2="25" stroke="#9FB2C8" stroke-width="2" marker-end="url(#arrow)"/>
+      <line x1="400" y1="25" x2="480" y2="25" stroke="#9FB2C8" stroke-width="2" marker-end="url(#arrow)"/>
+      <line x1="320" y1="50" x2="320" y2="120" stroke="#9FB2C8" stroke-width="2" marker-end="url(#arrow)"/>
+      <line x1="560" y1="50" x2="560" y2="120" stroke="#9FB2C8" stroke-width="2" marker-end="url(#arrow)"/>
+    </g>
+  </g>
+
+  <!-- Agent Controls -->
+  <g transform="translate(360,660)">
+    <rect width="700" height="220" rx="16" fill="url(#cardGrad)" stroke="#1F2835"/>
+    <text x="20" y="40" fill="#9FB2C8" font-size="14" font-weight="600" font-family="Inter, system-ui">Agent Controls</text>
+
+    <!-- Start All Agents -->
+    <g transform="translate(20,70)">
+      <rect width="300" height="50" rx="10" fill="#36D399" filter="url(#softShadow)"/>
+      <text x="20" y="32" fill="#0F172A" font-size="14" font-weight="700" font-family="Inter, system-ui">Start All Agents</text>
+      <text x="20" y="48" fill="#0F172A" font-size="11" opacity="0.8">Initialize and resume workflows</text>
+    </g>
+
+    <!-- Stop All Agents -->
+    <g transform="translate(360,70)">
+      <rect width="300" height="50" rx="10" fill="#EF4444" filter="url(#softShadow)"/>
+      <text x="20" y="32" fill="#0F172A" font-size="14" font-weight="700" font-family="Inter, system-ui">Stop All Agents</text>
+      <text x="20" y="48" fill="#0F172A" font-size="11" opacity="0.8">Emergency kill-switch</text>
+    </g>
+
+    <!-- Safety Note -->
+    <rect x="20" y="140" width="640" height="50" rx="10" fill="#1F2835"/>
+    <text x="40" y="170" fill="#9FB2C8" font-size="12" font-family="Inter, system-ui">Safety: Active limits (rate, budget, retries)</text>
+  </g>
+
+  <!-- Right chat panel -->
+  <g transform="translate(1080,140)">
+    <rect width="280" height="740" rx="16" fill="url(#cardGrad)" stroke="#1F2835"/>
+    <text x="20" y="40" fill="#9FB2C8" font-size="14" font-weight="600" font-family="Inter, system-ui">Chat with AI Product Manager</text>
+
+    <!-- Hierarchy hint: Boss label -->
+    <g transform="translate(20,60)">
+      <rect x="0" y="0" width="240" height="36" rx="8" fill="#0E1620" stroke="#1F2835"/>
+      <text x="12" y="24" fill="#9FB2C8" font-size="12" font-weight="600">You (Boss)</text>
+      <text x="160" y="24" fill="#7089A6" font-size="11">AI PM reports to you</text>
+    </g>
+
+    <!-- Chat messages area (scrollable visual) -->
+    <clipPath id="chatClip">
+      <rect x="20" y="110" width="240" height="520" rx="8"/>
+    </clipPath>
+
+    <g clip-path="url(#chatClip)">
+      <!-- Boss message (accent) -->
+      <g transform="translate(20,110)">
+        <rect x="0" y="0" width="200" height="44" rx="8" fill="url(#accentGrad)"/>
+        <text x="12" y="28" fill="#0F172A" font-size="13" font-weight="700" font-family="Inter, system-ui">Boss: Prioritize API docs now</text>
+        <text x="12" y="40" fill="#0F172A" font-size="10" opacity="0.8">just now</text>
+      </g>
+
+      <!-- PM reply -->
+      <g transform="translate(20,170)">
+        <rect x="40" y="0" width="180" height="44" rx="8" fill="#0E1620" stroke="#1F2835"/>
+        <text x="52" y="28" fill="#E6EDF5" font-size="13" font-family="Inter, system-ui">PM (AI): Understood, reprioritizing</text>
+        <text x="52" y="40" fill="#7089A6" font-size="10" opacity="0.8">1m ago</text>
+      </g>
+
+      <!-- Additional messages -->
+      <g transform="translate(20,230)">
+        <rect x="0" y="0" width="200" height="44" rx="8" fill="url(#accentGrad)"/>
+        <text x="12" y="28" fill="#0F172A" font-size="13" font-weight="700">Boss: Also increase test coverage</text>
+        <text x="12" y="40" fill="#0F172A" font-size="10" opacity="0.8">2m ago</text>
+      </g>
+
+      <g transform="translate(20,290)">
+        <rect x="40" y="0" width="180" height="44" rx="8" fill="#0E1620" stroke="#1F2835"/>
+        <text x="52" y="28" fill="#E6EDF5" font-size="13">PM (AI): Acknowledged, scheduling tasks</text>
+        <text x="52" y="40" fill="#7089A6" font-size="10" opacity="0.8">3m ago</text>
+      </g>
+
+      <g transform="translate(20,350)">
+        <rect x="0" y="0" width="200" height="44" rx="8" fill="url(#accentGrad)"/>
+        <text x="12" y="28" fill="#0F172A" font-size="13" font-weight="700">Boss: Keep me updated</text>
+        <text x="12" y="40" fill="#0F172A" font-size="10" opacity="0.8">5m ago</text>
+      </g>
+    </g>
+
+    <!-- Chat input area -->
+    <g transform="translate(20,650)">
+      <rect x="0" y="0" width="240" height="56" rx="10" fill="#0E1620" stroke="#1F2835"/>
+      <!-- Input placeholder -->
+      <text x="16" y="34" fill="#9FB2C8" font-size="13" font-family="Inter, system-ui">Type a message to the app...</text>
+
+      <!-- Send button -->
+      <g transform="translate(190,8)">
+        <rect x="0" y="0" width="50" height="40" rx="8" fill="url(#sendGrad)" filter="url(#softShadow)"/>
+        <!-- Paper plane icon -->
+        <polygon points="12,10 38,20 12,30 16,20" fill="#0F172A" opacity="0.95"/>
+      </g>
+    </g>
+
+    <!-- Quick action: command hint -->
+    <text x="20" y="720" fill="#7089A6" font-size="11" font-family="Inter, system-ui">Tip: prefix messages with "Boss:" to issue commands</text>
+  </g>
+</svg>
