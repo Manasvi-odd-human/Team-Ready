@@ -6,6 +6,6 @@ An autonomous, free and open source AI product team built with -
 
 An overview of Team Ready's pipeline
 
-<img style= "border-radius: 100 px" width="5126" height="2559" alt="Entire project structure bright-1" src="https://github.com/user-attachments/assets/ecf5eeb0-d2de-4614-9efd-4d859f9fdc55" />
+<img style= "border-radius:100px;" width="5126" height="2559" alt="Entire project structure bright-1" src="https://github.com/user-attachments/assets/ecf5eeb0-d2de-4614-9efd-4d859f9fdc55" />
 
 
