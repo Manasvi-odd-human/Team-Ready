@@ -12,11 +12,35 @@
 </head>
 <body>
     <div class="app-container">
+        <div class="topbar">
+            <div class="breadcrumb">Dashboard</div>
+            <div class="nav-links">
+                <button class="nav-link" onclick="goToDashboard()">Dashboard</button>
+                <button class="nav-link" onclick="goToMyTasks()">My Tasks</button>
+                <button class="nav-link" onclick="goToProjectFiles()">Project Files</button>
+                <button class="nav-link" onclick="goToTeamConfiguration()">Team Configuration</button>
+                <button class="nav-link" onclick="createNewProject()">New Project</button>
+                <button class="nav-link" onclick="createNewTask()">New Task</button>
+                <button class="status-toggle" onclick="toggleCrewAIStatus()">CrewAI Status</button>
+            </div>
+            <div class="nav-actions">
+                <input id="global-search" class="search-input" placeholder="Search">
+                <button class="nav-link" onclick="performSearch()">Search</button>
+                <div class="notification" onclick="openNotifications()">
+                    <span>Notifications</span>
+                    <div class="badge" id="notification-badge">0</div>
+                </div>
+                <div class="avatar" onclick="openUserSettings()"></div>
+            </div>
+        </div>
+        <div id="crewai-status-dropdown" class="status-dropdown">
+            <div id="crewai-status-content"></div>
+        </div>
         <!-- Settings Icon Top Right -->
         <div class="settings-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="3"></circle>
-                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2  2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06 a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
             </svg>
         </div>
 
@@ -129,6 +153,85 @@
                 <div class="sprint-report">
                     <h3>SPRINT REPORT</h3>
                     <p>OUR DESIGN TEAM REQUESTS REINFORCEMENT.</p>
+                </div>
+
+                <div class="sprint-report">
+                    <h3>USER</h3>
+                    <input id="login-username" placeholder="Username">
+                    <input id="login-password" type="password" placeholder="Password">
+                    <div class="action-buttons">
+                        <button onclick="login()">LOGIN</button>
+                        <button onclick="logout()">LOGOUT</button>
+                    </div>
+                </div>
+
+                <div class="sprint-report">
+                    <h3>CREWAI PM</h3>
+                    <input id="prompt-input" placeholder="Enter prompt">
+                    <div class="action-buttons">
+                        <button onclick="submitPrompt()">SUBMIT PROMPT</button>
+                    </div>
+                    <div id="prompt-response"></div>
+                </div>
+
+                <div class="sprint-report">
+                    <h3>EMPLOYEES</h3>
+                    <div class="action-buttons">
+                        <button onclick="refreshEmployees()">REFRESH</button>
+                    </div>
+                    <div id="employees-overview"></div>
+                </div>
+
+                <div class="sprint-report">
+                    <h3>TASKS</h3>
+                    <input id="task-employee" placeholder="Employee">
+                    <input id="task-description" placeholder="Task">
+                    <input id="task-due-date" placeholder="Due date">
+                    <div class="action-buttons">
+                        <button onclick="assignTask()">ASSIGN</button>
+                    </div>
+                    <input id="update-task-id" placeholder="Task ID">
+                    <input id="update-task-status" placeholder="Status">
+                    <div class="action-buttons">
+                        <button onclick="updateTaskStatus()">UPDATE STATUS</button>
+                    </div>
+                </div>
+
+                <div class="sprint-report">
+                    <h3>CHAT</h3>
+                    <input id="chat-target" placeholder="Target">
+                    <input id="chat-message" placeholder="Message">
+                    <div class="action-buttons">
+                        <button onclick="sendChatMessage()">SEND</button>
+                    </div>
+                </div>
+
+                <div class="sprint-report">
+                    <h3>PROJECTS</h3>
+                    <div class="action-buttons">
+                        <button onclick="refreshProjects()">REFRESH</button>
+                    </div>
+                    <div id="projects-list"></div>
+                    <input id="select-project-id" placeholder="Project ID">
+                    <div class="action-buttons">
+                        <button onclick="selectProject()">SELECT</button>
+                    </div>
+                </div>
+
+                <div class="sprint-report">
+                    <h3>FILES</h3>
+                    <div class="action-buttons">
+                        <button onclick="refreshFiles()">REFRESH</button>
+                    </div>
+                    <div id="files-list"></div>
+                </div>
+
+                <div class="sprint-report">
+                    <h3>SYSTEM</h3>
+                    <div class="action-buttons">
+                        <button onclick="refreshSystemStatus()">REFRESH</button>
+                    </div>
+                    <div id="system-status"></div>
                 </div>
             </aside>
         </div>
