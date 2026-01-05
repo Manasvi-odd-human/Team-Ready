@@ -1,8 +1,8 @@
 # Team-Ready
 An autonomous, free and open source AI product team built with -
 1. Crew AI
-2. EEL Python framework for frontend in js
-3. Python for backend
+2. Svelte for frontend
+3. Python + Flask + SocketsIO for backend
 
 An overview of Team Ready's pipeline
 
