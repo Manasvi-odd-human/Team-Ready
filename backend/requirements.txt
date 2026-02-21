@@ -1,0 +1,9 @@
+Flask
+Flask-SocketIO
+python-dotenv
+python-engineio
+python-socketio
+gevent
+gevent-websocket
+litellm
+pytest
