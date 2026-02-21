@@ -141,3 +141,103 @@ def test_submit_agent_output(client):
     
     assert f"Agent {agent_id} submitted output: {output_content}" in content
     assert f"Critique from Agent X for {agent_id}'s output: This output lacks detail and does not address edge cases. Needs refinement." in content
+
+def test_manager_agent_workflow(client):
+    """
+    Tests a complete manager agent workflow involving initialization, task kickoff,
+    agent output submission, budget management, and pause/approve cycle.
+    """
+    project_id = "manager-test-project"
+    repo_url = "https://github.com/manager/project"
+    path = "/tmp/manager_project"
+
+    # 1. Initialize Project
+    rv = client.post('/init', json={'repo_url': repo_url, 'path': path})
+    assert rv.status_code == 200
+    assert "Project initialization request received and data dir ensured." in rv.json['message']
+    
+    # Verify initial config
+    config = read_json_file('config.json')
+    assert config['project_spend'] == 0.0
+
+    # 2. Manager Agent kicks off an initial task
+    task1 = "Develop core features for new app"
+    rv = client.post('/kickoff', json={'project_id': project_id, 'task': task1})
+    assert rv.status_code == 200
+    assert "Agent kickoff request received." in rv.json['message']
+    
+    # Verify log content
+    log_file_path = os.path.join(app.config['DATA_DIR'], 'agents_internal.log')
+    with open(log_file_path, 'r') as f:
+        content = f.read()
+    assert f"Agent kickoff for project {project_id}: {task1}" in content
+
+    # 3. Simulate a Sub-Agent submitting output
+    agent_id_design = "DesignAgent"
+    output_design = "Completed initial UI wireframes."
+    rv = client.post('/submit_agent_output', json={'agent_id': agent_id_design, 'output': output_design})
+    assert rv.status_code == 200
+    assert "Agent output submitted and criticism simulated." in rv.json['message']
+    
+    with open(log_file_path, 'r') as f:
+        content = f.read()
+    assert f"Agent {agent_id_design} submitted output: {output_design}" in content
+    assert f"Critique from Agent X for {agent_id_design}'s output:" in content
+
+    # 4. Check project status
+    rv = client.get(f'/status?id={project_id}')
+    assert rv.status_code == 200
+    assert rv.json['project_id'] == project_id
+    # todo_list is still empty as we haven't added items to it in this test
+
+    # 5. Simulate LLM calls and exhaust budget
+    config = read_json_file('config.json')
+    config['hard_limit'] = 5.0 # Set a low limit for this test
+    write_json_file('config.json', config)
+
+    # First call - within budget
+    rv = client.post('/simulate_llm_call', json={'cost': 2.0})
+    assert rv.status_code == 200
+    assert read_json_file('config.json')['project_spend'] == 2.0
+
+    # Second call - exceeds budget
+    rv = client.post('/simulate_llm_call', json={'cost': 4.0})
+    assert rv.status_code == 403
+    assert "Budget exhausted" in rv.json['message']
+    assert read_json_file('config.json')['project_spend'] == 6.0 # Spend still updated
+
+    # 6. Manager Agent tries to kickoff a task, but encounters a paused state (implicit check)
+    # This also tests the initial state of agent_paused being False
+    task_paused = "Task while budget exhausted"
+    rv = client.post('/kickoff', json={'project_id': project_id, 'task': task_paused})
+    # If budget was exhausted, the agent would be terminated, and this kickoff would not happen
+    # For this test, we are simulating the budget exhaustion, but the kickoff logic
+    # does not explicitly check the budget status.
+    # The important part is that a manager agent would react to the budget exhaustion event.
+    assert rv.status_code == 200 # It should still receive the request, but the underlying system would stop
+
+    # 7. Explicitly pause the agent
+    rv = client.post('/pause_agent')
+    assert rv.status_code == 200
+    assert backend_app.agent_paused is True
+
+    # 8. Manager Agent tries to kickoff a task while paused
+    task_blocked = "Implement user authentication"
+    rv = client.post('/kickoff', json={'project_id': project_id, 'task': task_blocked})
+    assert rv.status_code == 403
+    assert "Agent is paused. Approval pending." in rv.json['message']
+
+    # 9. Manager Agent approves the action
+    rv = client.post('/approve')
+    assert rv.status_code == 200
+    assert backend_app.agent_paused is False
+
+    # 10. Manager Agent tries to kickoff task again, should now succeed
+    task_approved = "Implement user authentication"
+    rv = client.post('/kickoff', json={'project_id': project_id, 'task': task_approved})
+    assert rv.status_code == 200
+    assert "Agent kickoff request received." in rv.json['message']
+    
+    with open(log_file_path, 'r') as f:
+        content = f.read()
+    assert f"Agent kickoff for project {project_id}: {task_approved}" in content
