@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="900" viewBox="0 0 1000 900">
+  <rect width="1000" height="900" fill="#E8EDE7"/>
+
+  <g transform="translate(40, 40)">
+    <rect width="280" height="820" rx="30" fill="#F9FBF9" stroke="#DDE2D8"/>
+    <circle cx="140" cy="80" r="40" fill="#DDE2D8"/>
+    <text x="140" y="145" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#2D362B" text-anchor="middle">Project Owner</text>
+    
+    <g transform="translate(30, 200)">
+      <text x="20" y="28" font-family="Inter, sans-serif" font-size="14" fill="#5A6658">Profile Info</text>
+      
+      <g transform="translate(0, 60)">
+        <text x="20" y="28" font-family="Inter, sans-serif" font-size="14" fill="#5A6658">AI Configuration</text>
+      </g>
+      
+      <g transform="translate(0, 120)">
+        <rect width="220" height="45" rx="15" fill="#768D71"/>
+        <text x="20" y="28" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#F9FBF9">Security &amp; Keys</text>
+      </g>
+    </g>
+    
+    <text x="140" y="780" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#768D71" text-anchor="middle">← Back to Dashboard</text>
+  </g>
+
+  <g transform="translate(350, 40)">
+    <rect width="610" height="820" rx="30" fill="#F9FBF9" stroke="#DDE2D8"/>
+    
+    <text x="40" y="50" font-family="Inter, sans-serif" font-size="24" font-weight="700" fill="#2D362B">Security &amp; API Management</text>
+    <text x="40" y="75" font-family="Inter, sans-serif" font-size="13" fill="#768D71">Manage your credentials and monitor access tokens.</text>
+
+    <g transform="translate(40, 130)">
+      <text x="0" y="0" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#2D362B">Provider API Keys</text>
+      
+      <g transform="translate(0, 25)">
+        <rect width="530" height="65" rx="15" fill="#DDE2D8" opacity="0.3"/>
+        <text x="15" y="25" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#5A6658">OpenAI (Primary)</text>
+        <text x="15" y="48" font-family="Inter, sans-serif" font-size="14" fill="#2D362B">sk-••••••••••••••••••••••••</text>
+        <rect x="420" y="15" width="95" height="35" rx="10" fill="#768D71"/>
+        <text x="467.5" y="37" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#F9FBF9" text-anchor="middle">ROTATE</text>
+      </g>
+
+      <g transform="translate(0, 105)">
+        <rect width="530" height="65" rx="15" fill="#DDE2D8" opacity="0.3"/>
+        <text x="15" y="25" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#5A6658">Anthropic</text>
+        <text x="15" y="48" font-family="Inter, sans-serif" font-size="14" fill="#9BA699">Not configured</text>
+        <rect x="420" y="15" width="95" height="35" rx="10" fill="#DDE2D8"/>
+        <text x="467.5" y="37" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#5A6658" text-anchor="middle">ADD KEY</text>
+      </g>
+    </g>
+
+    <g transform="translate(40, 340)">
+      <text x="0" y="0" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#2D362B">Automatic Key Rotation</text>
+      <rect x="480" y="-15" width="50" height="26" rx="13" fill="#DDE2D8"/>
+      <circle cx="493" cy="-2" r="10" fill="#F9FBF9"/>
+      <text x="0" y="25" font-family="Inter, sans-serif" font-size="12" fill="#768D71">Rotate keys every 90 days to maintain high security.</text>
+    </g>
+
+    <g transform="translate(40, 420)">
+      <text x="0" y="0" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#2D362B">Credential Access Logs</text>
+      <rect x="0" y="20" width="530" height="180" rx="20" fill="#F9FBF9" stroke="#DDE2D8" stroke-dasharray="4"/>
+      
+      <g transform="translate(15, 50)" font-family="Inter, sans-serif" font-size="12">
+        <text x="0" y="0" fill="#5A6658" font-weight="600">OpenAI Key</text>
+        <text x="120" y="0" fill="#9BA699">Accessed by Agent E1 (Lead Dev)</text>
+        <text x="420" y="0" fill="#9BA699" text-anchor="end">2 mins ago</text>
+        
+        <text x="0" y="35" fill="#5A6658" font-weight="600">Ollama Local</text>
+        <text x="120" y="35" fill="#9BA699">Accessed by Agent E3 (Tester)</text>
+        <text x="420" y="35" fill="#9BA699" text-anchor="end">14 mins ago</text>
+        
+        <text x="0" y="70" fill="#5A6658" font-weight="600">Master Key</text>
+        <text x="120" y="70" fill="#5A6658">User Login (New Session)</text>
+        <text x="420" y="70" fill="#9BA699" text-anchor="end">1 hour ago</text>
+      </g>
+    </g>
+
+    <g transform="translate(40, 650)">
+      <rect width="530" height="60" rx="15" fill="#E8F2E7" stroke="#768D71"/>
+      <text x="20" y="35" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#2D362B">Two-Factor Authentication (2FA)</text>
+      <text x="430" y="35" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#768D71">ENABLED</text>
+    </g>
+
+    <g transform="translate(40, 740)">
+      <rect width="530" height="50" rx="15" fill="#F9FBF9" stroke="#EF4444"/>
+      <text x="265" y="31" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#EF4444" text-anchor="middle">Revoke All API Access</text>
+    </g>
+  </g>
+</svg>
