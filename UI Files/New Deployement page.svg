@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
+  <rect width="1200" height="1200" fill="#E8EDE7"/>
+
+  <g transform="translate(60, 40)">
+    <text x="0" y="30" font-family="Inter, sans-serif" font-size="28" font-weight="700" fill="#2D362B">Initialize New Deployment</text>
+    <text x="0" y="55" font-family="Inter, sans-serif" font-size="14" fill="#768D71">Define the scope, constraints, and criteria for your AI team.</text>
+  </g>
+
+  <g transform="translate(60, 120)">
+    <rect width="1080" height="1000" rx="30" fill="#F9FBF9" stroke="#DDE2D8"/>
+    
+    <g transform="translate(40, 40)">
+      <text x="0" y="20" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#2D362B">1. Project Core</text>
+      
+      <text x="0" y="50" font-family="Inter, sans-serif" font-size="12" fill="#5A6658">Project Name</text>
+      <rect y="60" width="480" height="45" rx="12" fill="#DDE2D8" opacity="0.3"/>
+      <text x="15" y="88" font-family="Inter, sans-serif" font-size="14" fill="#9BA699">e.g. E-commerce Backend Migration</text>
+
+      <text x="0" y="140" font-family="Inter, sans-serif" font-size="12" fill="#5A6658">Final Deliverables (What must be delivered?)</text>
+      <rect y="150" width="480" height="80" rx="12" fill="#DDE2D8" opacity="0.3"/>
+      <text x="15" y="175" font-family="Inter, sans-serif" font-size="14" fill="#9BA699">Describe the final output...</text>
+
+      <text x="0" y="260" font-family="Inter, sans-serif" font-size="12" fill="#5A6658">Existing Repository (GitHub / GitLab URL)</text>
+      <rect y="270" width="480" height="45" rx="12" fill="#DDE2D8" opacity="0.3"/>
+      <path d="M15 292 L30 292 M22 285 L22 300" stroke="#768D71" stroke-width="2"/> <text x="40" y="298" font-family="Inter, sans-serif" font-size="14" fill="#768D71">https://github.com/user/repo</text>
+
+      <text x="0" y="350" font-family="Inter, sans-serif" font-size="12" fill="#5A6658">Constraints &amp; Decisions (Your "Taste")</text>
+      <rect y="360" width="480" height="120" rx="12" fill="#DDE2D8" opacity="0.3"/>
+      <text x="15" y="385" font-family="Inter, sans-serif" font-size="13" fill="#9BA699">List any forbidden libraries or specific architectural choices...</text>
+    </g>
+
+    <g transform="translate(560, 40)">
+      <text x="0" y="20" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#2D362B">2. Acceptance &amp; Testing</text>
+
+      <text x="0" y="50" font-family="Inter, sans-serif" font-size="12" fill="#5A6658">Acceptance Criteria (Checklist)</text>
+      <rect y="60" width="480" height="130" rx="15" fill="#F0F4F0" stroke="#DDE2D8"/>
+      <g transform="translate(15, 85)">
+        <rect width="16" height="16" rx="4" fill="#768D71"/>
+        <text x="25" y="13" font-family="Inter, sans-serif" font-size="13" fill="#5A6658">Clean documentation for all functions</text>
+        <rect y="30" width="16" height="16" rx="4" fill="#DDE2D8" stroke="#768D71"/>
+        <text x="25" y="43" font-family="Inter, sans-serif" font-size="13" fill="#5A6658">Zero critical security vulnerabilities</text>
+        <text x="0" y="80" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#768D71">+ Add Condition</text>
+      </g>
+
+      <g transform="translate(0, 220)">
+        <text x="0" y="0" font-family="Inter, sans-serif" font-size="12" fill="#5A6658">Testing Type</text>
+        <rect y="10" width="230" height="40" rx="10" fill="#768D71"/>
+        <text x="115" y="35" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#F9FBF9" text-anchor="middle">Unit + Integration</text>
+        
+        <text x="250" y="0" font-family="Inter, sans-serif" font-size="12" fill="#5A6658">Min. Coverage %</text>
+        <rect x="250" y="10" width="230" height="40" rx="10" fill="#DDE2D8" opacity="0.4"/>
+        <text x="265" y="35" font-family="Inter, sans-serif" font-size="14" fill="#2D362B">85%</text>
+      </g>
+
+      <g transform="translate(0, 310)">
+        <text x="0" y="0" font-family="Inter, sans-serif" font-size="12" fill="#5A6658">Knowledge Base (PDFs, Docs, Snippets)</text>
+        <rect y="15" width="480" height="140" rx="20" fill="#F9FBF9" stroke="#768D71" stroke-dasharray="6"/>
+        <text x="240" y="75" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#768D71" text-anchor="middle">Click or Drag files to upload</text>
+        <text x="240" y="95" font-family="Inter, sans-serif" font-size="11" fill="#9BA699" text-anchor="middle">PDF, TXT, MD, or JSON up to 50MB</text>
+      </g>
+    </g>
+
+    <g transform="translate(40, 880)">
+      <rect width="1000" height="60" rx="20" fill="#768D71"/>
+      <text x="500" y="37" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#F9FBF9" text-anchor="middle">Launch AI Workforce →</text>
+    </g>
+  </g>
+</svg>

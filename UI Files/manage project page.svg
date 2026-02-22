@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <rect width="1200" height="900" fill="#E8EDE7"/>
+
+  <g transform="translate(60, 40)">
+    <text x="0" y="30" font-family="Inter, sans-serif" font-size="28" font-weight="700" fill="#2D362B">Manage Projects</text>
+    <text x="0" y="55" font-family="Inter, sans-serif" font-size="14" fill="#768D71">Overview of your AI workforce deployments</text>
+    
+    <g transform="translate(0, 90)">
+      <rect width="100" height="36" rx="18" fill="#768D71"/>
+      <text x="50" y="23" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#F9FBF9" text-anchor="middle">All (4)</text>
+      
+      <rect x="110" width="100" height="36" rx="18" fill="#DDE2D8" opacity="0.6"/>
+      <text x="160" y="23" font-family="Inter, sans-serif" font-size="13" fill="#5A6658" text-anchor="middle">Active</text>
+      
+      <rect x="220" width="100" height="36" rx="18" fill="#DDE2D8" opacity="0.6"/>
+      <text x="270" y="23" font-family="Inter, sans-serif" font-size="13" fill="#5A6658" text-anchor="middle">Paused</text>
+    </g>
+  </g>
+
+  <g transform="translate(60, 200)">
+    <g transform="translate(0, 0)">
+      <rect width="520" height="180" rx="25" fill="#F9FBF9" stroke="#DDE2D8"/>
+      <text x="25" y="40" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#2D362B">Project Alpha: Web Automation</text>
+      <text x="25" y="65" font-family="Inter, sans-serif" font-size="13" fill="#768D71">Department: Development • 4 Agents Active</text>
+      
+      <rect x="25" y="90" width="470" height="10" rx="5" fill="#DDE2D8" opacity="0.4"/>
+      <rect x="25" y="90" width="350" height="10" rx="5" fill="#768D71"/>
+      <text x="455" y="80" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#768D71">75%</text>
+
+      <g transform="translate(25, 125)">
+        <rect width="80" height="30" rx="10" fill="#E8F2E7"/>
+        <text x="40" y="20" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#768D71" text-anchor="middle">ACTIVE</text>
+        
+        <text x="380" y="20" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#768D71">View Details →</text>
+      </g>
+    </g>
+
+    <g transform="translate(560, 0)">
+      <rect width="520" height="180" rx="25" fill="#F9FBF9" stroke="#DDE2D8"/>
+      <text x="25" y="40" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#2D362B">Q4 Marketing Campaign</text>
+      <text x="25" y="65" font-family="Inter, sans-serif" font-size="13" fill="#768D71">Department: Creative • 2 Agents Paused</text>
+      
+      <rect x="25" y="90" width="470" height="10" rx="5" fill="#DDE2D8" opacity="0.4"/>
+      <rect x="25" y="90" width="120" height="10" rx="5" fill="#9BA699"/>
+      <text x="455" y="80" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#9BA699">25%</text>
+
+      <g transform="translate(25, 125)">
+        <rect width="80" height="30" rx="10" fill="#F5F5F5"/>
+        <text x="40" y="20" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#9BA699" text-anchor="middle">PAUSED</text>
+        
+        <text x="380" y="20" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#768D71">Resume Project</text>
+      </g>
+    </g>
+
+    <g transform="translate(0, 210)">
+      <rect width="520" height="180" rx="25" fill="#F9FBF9" stroke="#DDE2D8"/>
+      <text x="25" y="40" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#2D362B">API Security Audit</text>
+      <text x="25" y="65" font-family="Inter, sans-serif" font-size="13" fill="#768D71">Department: Analytics • 3 Agents Idle</text>
+      
+      <rect x="25" y="90" width="470" height="10" rx="5" fill="#DDE2D8" opacity="0.4"/>
+      <rect x="25" y="90" width="470" height="10" rx="5" fill="#768D71"/>
+      <text x="445" y="80" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#768D71">100%</text>
+
+      <g transform="translate(25, 125)">
+        <rect width="90" height="30" rx="10" fill="#E8F2E7"/>
+        <text x="45" y="20" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#768D71" text-anchor="middle">COMPLETE</text>
+        
+        <text x="380" y="20" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#768D71">Archive Project</text>
+      </g>
+    </g>
+
+    <g transform="translate(560, 210)">
+      <rect width="520" height="180" rx="25" fill="#E8EDE7" stroke="#768D71" stroke-dasharray="8"/>
+      <text x="260" y="85" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#768D71" text-anchor="middle">+ Start New Deployment</text>
+      <text x="260" y="110" font-family="Inter, sans-serif" font-size="13" fill="#5A6658" text-anchor="middle">Add a new project to your workforce</text>
+    </g>
+  </g>
+
+  <g transform="translate(60, 750)">
+    <text x="0" y="0" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#768D71">← Back to Dashboard</text>
+    
+    <g transform="translate(930, -30)">
+        <rect width="150" height="50" rx="20" fill="#768D71"/>
+        <text x="75" y="30" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#F9FBF9" text-anchor="middle">Archive All</text>
+    </g>
+  </g>
+</svg>
